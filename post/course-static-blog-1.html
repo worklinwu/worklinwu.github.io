@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1,maximum-scale=1, user-scalable=no" />
+  <meta name="renderer" content="webkit">
+  <title>
+
+    我的博客的搭建教程[1]-准备篇 | 拳头巴掌的博客
+  </title>
+
+  <link rel="alternate" href="/atom.xml" title="拳头巴掌的博客" type="application/atom+xml">
+
+  <link rel="icon" type="image/png" href="/assets/i/favicon.png">
+  <link rel="apple-touch-icon-precomposed" href="/assets/i/app-icon72x72@2x.png">
+  <link rel="stylesheet" href="/assets/style/blog.css" />
+  <link rel="stylesheet" href="/assets/lib/prettify/prettify-night.css" />
+
+  <script src="/assets/lib/seajs/3.0.0/sea.js"></script>
+  <script src="/assets/script/seajs.config.js"></script>
+</head>
+
+<body>
+  <header class="area-page-header">
+    <div class="inner">
+      <h1 class="logo"><a href="/" title="回首页">拳头巴掌</a></h1>
+
+      <div class="m-page-nav" id="j_page_nav">
+        <a class="page-nav-btn"></a>
+        <ul>
+
+          <li><a href="/about.html" target="_self">关于我</a></li>
+
+          <li><a href="/archives/index.html" target="_self">文章归档</a></li>
+
+          <li><a href="https://github.com/worklinwu" target="_blank">github</a></li>
+
+          <li><a href="http://www.linwu.name/HtmlConvertToCss" target="_self"><strong>HtmlConvertToCss</strong></a></li>
+
+        </ul>
+        <div class="nav-label"></div>
+      </div>
+      <div class="m-search">
+        <form method="get" id="j_search" action="/" class="control-group">
+          <input type="text" name="search" class="search-input" />
+          <button type="submit" class="submit-btn">搜索</button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <section class="area-article-details clearfix">
+    <div class="article-content">
+      <div class="article-title">我的博客的搭建教程[1]-准备篇</div>
+      <div class="article-meta"><span>作者：拳头巴掌</span> ∷ <span>时间：2015-01-01</span></div>
+      <article class="blog-article" id="j_article_markdown">
+        <blockquote>
+          <p>分享下这个博客的搭建教程.
+            <br>(这个教程我将分几次来说明, 有感兴趣的可以看我的<a href="https://github.com/worklinwu/worklinwu.github.io.git" target="_blank" rel="external">源码</a>)</p>
+        </blockquote>
+        <h1 id="u4E00_u4E9B_u51C6_u5907_u5DE5_u4F5C"><a href="#u4E00_u4E9B_u51C6_u5907_u5DE5_u4F5C" class="headerlink" title="一些准备工作"></a>一些准备工作</h1>
+        <h3 id="u5173_u952E_u5B57_uFF08_u4EE5_u4E0B_u662F_u6211_u4E2A_u4EBA_u7684_u89C1_u89E3_uFF09"><a href="#u5173_u952E_u5B57_uFF08_u4EE5_u4E0B_u662F_u6211_u4E2A_u4EBA_u7684_u89C1_u89E3_uFF09" class="headerlink" title="关键字（以下是我个人的见解）"></a>关键字（以下是我个人的见解）</h3>
+        <ul>
+          <li><code>静态博客</code>：这里专指Github， Github提供这样一个服务，类似一个简单的服务器，你建立一个与用户名同名的项目，里面放置你的静态文件，通过一些处理后，你访问 username.guthub.io 就可以直接访问页面了。
+            <br>既然是静态博客，每个页面都是要独立，没有什么后台程序可以给你动态拼接页面，这么一来管理就变的非常不方便。 所以就有了类似“jekyll，Hexo”等这样的的静态博客系统，就是在本地环境，通过一些代码来生成静态文件，然后将静态文件上传到你的Github仓库里，这样就相对方便管理一些啦。</li>
+          <li><code>jekyll</code>：jekyll是ruby编写的，但是你可以不懂ruby，根据教程搭建下ruby环境，安装下jekyll，然后通过命令行的方式就可以管理你的博客啦。 只是你要扩展功能就有些困难了。 </li>
+        </ul>
+        <h3 id="u8D44_u6599_u7684_u6536_u96C6"><a href="#u8D44_u6599_u7684_u6536_u96C6" class="headerlink" title="资料的收集"></a>资料的收集</h3>
+        <ul>
+          <li>上Google搜索”github博客”有一罗列的教程，这个就不推荐了。 </li>
+          <li><a href="http://jekyllcn.com/" target="_blank" rel="external">Jekyll</a> 因为我不懂ruby，最后没有用它。 </li>
+          <li><a href="https://github.com/ericzhang-cn/papery" target="_blank" rel="external">Papery</a> 因为自己懂一点node，于是用这个来搭建我的博客。 </li>
+          <li><a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>，类似的还有<code>Hexo</code>，因为英文水平不好，暂时放弃。 </li>
+        </ul>
+        <h3 id="u4E00_u4E9B_u51C6_u5907"><a href="#u4E00_u4E9B_u51C6_u5907" class="headerlink" title="一些准备"></a>一些准备</h3>
+        <ul>
+          <li>本机要安装Git。</li>
+          <li>因为我的博客是基于Node的，所以如果你也是用Papery，那么要安装Node。</li>
+          <li>你需要有一个自己的Github的账号，并建立一个和自己用户名相同的仓库。 </li>
+          <li>还需要准备一套静态页面，供博客使用。 </li>
+          <li>此外你还可以准备一个自己的域名。 我用<code>linwu.name</code> 映射 <code>worklinwu.github.io</code>。 </li>
+        </ul>
+        <h3 id="u5176_u4ED6"><a href="#u5176_u4ED6" class="headerlink" title="其他"></a>其他</h3>
+        <p>在开发过程中有用到的第三方库、插件</p>
+        <ul>
+          <li><a href="https://github.com/krisk/Fuse" target="_blank" rel="external">Fuse</a> 一款javascript查询引擎 </li>
+          <li><a href="https://github.com/isagalaev/highlight.js" target="_blank" rel="external">Highlightjs</a> 代码高亮插件 </li>
+          <li><a href="https://github.com/jeromeetienne/jquery-qrcode" target="_blank" rel="external">jQuery.qrcode</a> jquery二维码插件 </li>
+          <li><a href="https://github.com/andris9/jStorage" target="_blank" rel="external">jStorage</a> 一个本地存储的库 </li>
+          <li><a href="http://seajs.org/" target="_blank" rel="external">Seajs</a> js模块开发支持 </li>
+          <li><a href="https://github.com/iamdanfox/typetype" target="_blank" rel="external">typetype</a> 打字效果插件</li>
+        </ul>
+      </article>
+
+      <!-- 多说评论框 -->
+
+      <div class="ds-thread" data-thread-key="cij0z54mb000e4p5lj6bmwoii" data-title="我的博客的搭建教程[1]-准备篇" data-url="http://www.linwu.name/post/course-static-blog-1.html"></div>
+
+
+    </div>
+    <div class="article-side">
+      <div class="ui-box-side m-side-article-list">
+        <div class="box-header">
+          <h3>其他文章</h3>
+        </div>
+        <ul>
+
+          <li><a href="/post/testHelloWorld.html">Hello World</a></li>
+
+          <li><a href="/post/course-static-blog-4.html">我的博客的搭建教程[4]-补充</a></li>
+
+          <li><a href="/post/course-static-blog-3.html">我的博客的搭建教程[3]-扩展</a></li>
+
+          <li><a href="/post/course-static-blog-2.html">我的博客的搭建教程[2]-Papery</a></li>
+
+        </ul>
+      </div>
+
+      <div class="ui-box-side m-side-article-list">
+        <div class="box-header">
+          <h3>热评文章</h3>
+        </div>
+        <ul>
+          <div class="ds-top-threads" data-range="monthly" data-num-items="5"></div>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="m-article-paging">
+
+    <a class="prev-article" href="/post/course-static-blog-2.html" title="上一篇：我的博客的搭建教程[2]-Papery">上一篇</a>
+
+
+    <a class="next-article" href="/post/note-blog-publish.html" title="下一篇：博客发布啦">下一篇</a>
+
+  </div>
+
+  <script type="text/javascript">
+    //seajs.use(["jquery", "qrcode", "prettify"], function ($, qrcode) {
+    seajs.use(["highlight", "jquery"], function(hljs) {
+      $(function() {
+        // 代码高亮
+        /*$('pre').each(function (i, block) {
+            hljs.highlightBlock(block);
+        });*/
+        //prettyPrint();
+      });
+    });
+
+    // 多说
+    var duoshuoQuery = {
+      short_name: "linwu"
+    };
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';
+      ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  <div class="m-gotop" id="j_gotop" title="回到顶部">回到顶部</div>
+
+  <footer class="area-page-footer">
+    <div class="friend-links">友情链接 :
+
+      <a href="http://gao7.com/" target="_blank">搞趣网</a>
+
+      <a href="http://willerce.com/" target="_blank">willerce</a>
+
+      <a href="http://www.zhoujier.com/" target="_blank">积耳大神</a>
+
+      <a href="https://huangzhenda.github.io/" target="_blank">阿达</a>
+
+      <a href="http://linjunfeng.com/" target="_blank">Junfo</a>
+
+    </div>
+    <div class="footer-info">
+      &copy; 2016 linwu &emsp;&emsp; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </footer>
+
+  <script type="text/javascript">
+    seajs.use(["common", "jquery"], function(common) {
+      $(function() {
+        common.init_page_nav();
+        common.init_gotop();
+      });
+    });
+
+    // 百度统计
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1989ec4c01507dc2525b30aca7d56f8e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+  <script>
+  </script>
+</body>
+
+</html>
