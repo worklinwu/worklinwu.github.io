@@ -1,94 +1,78 @@
 <!DOCTYPE html>
 <html>
-
 <head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1,maximum-scale=1, user-scalable=no"/>
+    <meta name="renderer" content="webkit">
+    <title>
+        
+        我的博客的搭建教程[2]-Papery |
+        
+        拳头巴掌的博客
+    </title>
+    
+    <link rel="alternate" href="/atom.xml" title="拳头巴掌的博客" type="application/atom+xml">
+    
+    <link rel="icon" type="image/png" href="/assets/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="/assets/i/app-icon72x72@2x.png">
+    <link rel="stylesheet" href="/assets/style/blog.css"/>
+    <link rel="stylesheet" href="/assets/lib/prettify/prettify-night.css"/>
 
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1,maximum-scale=1, user-scalable=no" />
-  <meta name="renderer" content="webkit">
-  <title>
-
-    我的博客的搭建教程[2]-Papery | 拳头巴掌的博客
-  </title>
-
-  <link rel="alternate" href="/atom.xml" title="拳头巴掌的博客" type="application/atom+xml">
-
-  <link rel="icon" type="image/png" href="/assets/i/favicon.png">
-  <link rel="apple-touch-icon-precomposed" href="/assets/i/app-icon72x72@2x.png">
-  <link rel="stylesheet" href="/assets/style/blog.css" />
-  <link rel="stylesheet" href="/assets/lib/prettify/prettify-night.css" />
-
-  <script src="/assets/lib/seajs/3.0.0/sea.js"></script>
-  <script src="/assets/script/seajs.config.js"></script>
+    <script src="/assets/lib/seajs/3.0.0/sea.js"></script>
+    <script src="/assets/script/seajs.config.js"></script>
 </head>
-
 <body>
-  <header class="area-page-header">
+<header class="area-page-header">
     <div class="inner">
-      <h1 class="logo"><a href="/" title="回首页">拳头巴掌</a></h1>
+        <h1 class="logo"><a href="/" title="回首页">拳头巴掌</a></h1>
 
-      <div class="m-page-nav" id="j_page_nav">
-        <a class="page-nav-btn"></a>
-        <ul>
-
-          <li><a href="/about.html" target="_self">关于我</a></li>
-
-          <li><a href="/archives/index.html" target="_self">文章归档</a></li>
-
-          <li><a href="https://github.com/worklinwu" target="_blank">github</a></li>
-
-          <li><a href="http://www.linwu.name/HtmlConvertToCss" target="_self"><strong>HtmlConvertToCss</strong></a></li>
-
-        </ul>
-        <div class="nav-label"></div>
-      </div>
-      <div class="m-search">
-        <form method="get" id="j_search" action="/" class="control-group">
-          <input type="text" name="search" class="search-input" />
-          <button type="submit" class="submit-btn">搜索</button>
-        </form>
-      </div>
+        <div class="m-page-nav" id="j_page_nav">
+            <a class="page-nav-btn"></a>
+            <ul>
+                
+                <li><a href="/about.html" target="_self">关于我</a></li>
+                
+                <li><a href="/archives.html" target="_self">文章归档</a></li>
+                
+                <li><a href="https://github.com/worklinwu" target="_blank">github</a></li>
+                
+                <li><a href="http://www.linwu.name/HtmlConvertToCss" target="_self"><strong>HtmlConvertToCss</strong></a></li>
+                
+            </ul>
+            <div class="nav-label"></div>
+        </div>
+        <div class="m-search">
+            <form method="get" id="j_search" action="/" class="control-group">
+                <input type="text" name="search" class="search-input"/>
+                <button type="submit" class="submit-btn">搜索</button>
+            </form>
+        </div>
     </div>
-  </header>
+</header>
 
-  <section class="area-article-details clearfix">
+<section class="area-article-details clearfix">
     <div class="article-content">
-      <div class="article-title">我的博客的搭建教程[2]-Papery</div>
-      <div class="article-meta"><span>作者：拳头巴掌</span> ∷ <span>时间：2015-01-06</span></div>
-      <article class="blog-article" id="j_article_markdown">
-        <p>说道静态博客的搭建，主要就是学会静态博客框架的使用，和内容的维护。
-          <br>所以先要讲讲关于我所使用的静态博客框架 <code>Papery</code> 的使用。 </p>
-        <h3 id="u8BA4_u8BC6_Papery"><a href="#u8BA4_u8BC6_Papery" class="headerlink" title="认识 Papery"></a>认识 Papery</h3>
-        <p>首先是对Papery的认识，和学会基本使用。
-          <br>要学习Papery最快的方法，当然就是看文档，<a href="https://github.com/ericzhang-cn/papery" target="_blank">Papery</a> 走起。
-          <br>（若干时间过后…）
-          <br>根据提示操作，应该很快就可以搭个基本的框架了。 之后只要写一些文章，发布到你的仓库中，就可以正常访问了。</p>
-        <h3 id="u6765_u70B9_u6269_u5C55"><a href="#u6765_u70B9_u6269_u5C55" class="headerlink" title="来点扩展"></a>来点扩展</h3>
-        <p>先来看看我最终项目的目录结构：
-          <br>
-          <figure class="highlight bash">
-            <table>
-              <tr>
-                <td class="code"><pre><span class="line">root</span><br><span class="line"> | - articles.yml <span class="comment">#文章配置</span></span><br><span class="line"> | - ext.yml      <span class="comment">#用户自定义扩展配置</span></span><br><span class="line"> | - navbar.yml   <span class="comment">#导航菜单配置</span></span><br><span class="line"> | - pages.yml    <span class="comment">#独立页面配置</span></span><br><span class="line"> | - site.yml     <span class="comment">#站点主配置</span></span><br><span class="line"> | - data.json    <span class="comment">#数据文件（自动生成）</span></span><br><span class="line"> | - index.html   <span class="comment">#首页（自动生成）</span></span><br><span class="line"> | - about.html   <span class="comment">#关于我页（自动生成）</span></span><br><span class="line"> | - archive.html <span class="comment">#文章归档页（自动生成）</span></span><br><span class="line"> | - rss.xml      <span class="comment">#RSS订阅源（自动生成）</span></span><br><span class="line"> | - articles     <span class="comment">#放置文章的目录</span></span><br><span class="line">      |- post1.md    <span class="comment">#post1元文本</span></span><br><span class="line">      |- post1.html  <span class="comment">#post1文章页面（自动生成）</span></span><br><span class="line">      |- post2.md    <span class="comment">#post2元文本</span></span><br><span class="line">      |- post2.html  <span class="comment">#post2文章页面（自动生成）</span></span><br><span class="line"> | - pages <span class="comment">#放置独立页面的目录</span></span><br><span class="line">      |- page1.md    <span class="comment">#page1元文本</span></span><br><span class="line">      |- page1.html  <span class="comment">#page1独立页面（自动生成）</span></span><br><span class="line"> | - assets    <span class="comment">#资源目录</span></span><br><span class="line"> | - templates <span class="comment">#模板目录</span></span><br><span class="line">```   </span><br><span class="line">我的目录结构，与Papery默认生成的有点不一样。 这是因为Papery所提供的博客功能并不能满足我的需求，我做了些修改和扩展。主要有：</span><br><span class="line"><span class="number">1</span>. 删除标签页</span><br><span class="line"><span class="number">2</span>. 新增文章归档页面</span><br><span class="line"><span class="number">3</span>. 新增关于我页面</span><br><span class="line"><span class="number">4</span>. 新增友情链接</span><br><span class="line"><span class="number">5</span>. 替换了原来的代码高亮方案   </span><br><span class="line"><span class="number">6</span>. 新增`data.json`文件，做本地存储使用，这个后面讲解</span><br><span class="line">   </span><br><span class="line">因为原有的代码并不能满足这些需求，因此要动到源码。   </span><br><span class="line">- 首先要理解源码。到你的`npm`目录下面，找到`papery`项目，大致看了下源码，其实很简单，主要的几个文件</span><br><span class="line">    ```bash</span><br><span class="line">    | - bin</span><br><span class="line">        |- build_runner.js      <span class="comment">#编译整个站点</span></span><br><span class="line">        |- create_runner.js     <span class="comment">#生成一个新的papery站点</span></span><br><span class="line">        |- papery.js            <span class="comment">#程序入口</span></span><br><span class="line">        |- server_runner.js     <span class="comment">#在本地启动一个调试服务器</span></span><br><span class="line">    | - lib</span><br><span class="line">        |- compiler.js          <span class="comment">#生成编译后的静态页面文件</span></span><br><span class="line">        |- parser.js            <span class="comment">#解析YAML配置文件信息</span></span><br></pre></td>
-              </tr>
-            </table>
-          </figure>
-        </p>
-        <ul>
-          <li>我要修改就只有<code>lib</code>目录下两个文件。
-            <br>大致的流程就是， 解析<code>.yml</code>文件和<code>articles</code>目录下的文件，生成可供编译过程使用的数据，然后读取<code>templates</code>目录下的<code>.ejs</code>的文件，把数据带进去编译，生成html到指定文件夹。
-            <br>所以呢，我添加的<code>文章归档</code>页和<code>关于我</code>的页面就很好解决了，复制一个方法，依葫芦画瓢，再在自己的项目里创建自己需要的模板文件（要懂一点ejs）。 </li>
-        </ul>
-        <p>都ok后，<code>papery build .</code> 下就可以看到结果了。 </p>
-        <p><code>友情链接</code>就简单多了，<code>Papery</code>原本就提供基本的扩展，在<code>ext.yml</code>下添加友情链接的数据，在模板里填上自己的代码就可以了。</p>
-        <p>有关<code>Papery</code>的就差不多了，好像也讲了些这之外的，不管了。 下一篇准备讲解我的博客另外的一些扩展，基本上都是锦上添花的功能。</p>
-      </article>
+        <div class="article-title">我的博客的搭建教程[2]-Papery</div>
+        <div class="article-meta"><span>作者：拳头巴掌</span> ∷ <span>时间：2015-01-06</span></div>
+        <article class="blog-article" id="j_article_markdown">
+            <p>说道静态博客的搭建，主要就是学会静态博客框架的使用，和内容的维护。<br>所以先要讲讲关于我所使用的静态博客框架 <code>Papery</code> 的使用。   </p>
+<h3 id="u8BA4_u8BC6_Papery"><a href="#u8BA4_u8BC6_Papery" class="headerlink" title="认识 Papery"></a>认识 Papery</h3><p>首先是对Papery的认识，和学会基本使用。<br>要学习Papery最快的方法，当然就是看文档，<a href="https://github.com/ericzhang-cn/papery" target="_blank">Papery</a> 走起。<br>（若干时间过后…）<br>根据提示操作，应该很快就可以搭个基本的框架了。  之后只要写一些文章，发布到你的仓库中，就可以正常访问了。</p>
+<h3 id="u6765_u70B9_u6269_u5C55"><a href="#u6765_u70B9_u6269_u5C55" class="headerlink" title="来点扩展"></a>来点扩展</h3><p>先来看看我最终项目的目录结构：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root</span><br><span class="line"> | - articles.yml <span class="comment">#文章配置</span></span><br><span class="line"> | - ext.yml      <span class="comment">#用户自定义扩展配置</span></span><br><span class="line"> | - navbar.yml   <span class="comment">#导航菜单配置</span></span><br><span class="line"> | - pages.yml    <span class="comment">#独立页面配置</span></span><br><span class="line"> | - site.yml     <span class="comment">#站点主配置</span></span><br><span class="line"> | - data.json    <span class="comment">#数据文件（自动生成）</span></span><br><span class="line"> | - index.html   <span class="comment">#首页（自动生成）</span></span><br><span class="line"> | - about.html   <span class="comment">#关于我页（自动生成）</span></span><br><span class="line"> | - archive.html <span class="comment">#文章归档页（自动生成）</span></span><br><span class="line"> | - rss.xml      <span class="comment">#RSS订阅源（自动生成）</span></span><br><span class="line"> | - articles     <span class="comment">#放置文章的目录</span></span><br><span class="line">      |- post1.md    <span class="comment">#post1元文本</span></span><br><span class="line">      |- post1.html  <span class="comment">#post1文章页面（自动生成）</span></span><br><span class="line">      |- post2.md    <span class="comment">#post2元文本</span></span><br><span class="line">      |- post2.html  <span class="comment">#post2文章页面（自动生成）</span></span><br><span class="line"> | - pages <span class="comment">#放置独立页面的目录</span></span><br><span class="line">      |- page1.md    <span class="comment">#page1元文本</span></span><br><span class="line">      |- page1.html  <span class="comment">#page1独立页面（自动生成）</span></span><br><span class="line"> | - assets    <span class="comment">#资源目录</span></span><br><span class="line"> | - templates <span class="comment">#模板目录</span></span><br><span class="line">```   </span><br><span class="line">我的目录结构，与Papery默认生成的有点不一样。 这是因为Papery所提供的博客功能并不能满足我的需求，我做了些修改和扩展。主要有：</span><br><span class="line"><span class="number">1</span>. 删除标签页</span><br><span class="line"><span class="number">2</span>. 新增文章归档页面</span><br><span class="line"><span class="number">3</span>. 新增关于我页面</span><br><span class="line"><span class="number">4</span>. 新增友情链接</span><br><span class="line"><span class="number">5</span>. 替换了原来的代码高亮方案   </span><br><span class="line"><span class="number">6</span>. 新增`data.json`文件，做本地存储使用，这个后面讲解</span><br><span class="line">   </span><br><span class="line">因为原有的代码并不能满足这些需求，因此要动到源码。   </span><br><span class="line">- 首先要理解源码。到你的`npm`目录下面，找到`papery`项目，大致看了下源码，其实很简单，主要的几个文件</span><br><span class="line">    ```bash</span><br><span class="line">    | - bin</span><br><span class="line">        |- build_runner.js      <span class="comment">#编译整个站点</span></span><br><span class="line">        |- create_runner.js     <span class="comment">#生成一个新的papery站点</span></span><br><span class="line">        |- papery.js            <span class="comment">#程序入口</span></span><br><span class="line">        |- server_runner.js     <span class="comment">#在本地启动一个调试服务器</span></span><br><span class="line">    | - lib</span><br><span class="line">        |- compiler.js          <span class="comment">#生成编译后的静态页面文件</span></span><br><span class="line">        |- parser.js            <span class="comment">#解析YAML配置文件信息</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>我要修改就只有<code>lib</code>目录下两个文件。<br>大致的流程就是， 解析<code>.yml</code>文件和<code>articles</code>目录下的文件，生成可供编译过程使用的数据，然后读取<code>templates</code>目录下的<code>.ejs</code>的文件，把数据带进去编译，生成html到指定文件夹。<br>所以呢，我添加的<code>文章归档</code>页和<code>关于我</code>的页面就很好解决了，复制一个方法，依葫芦画瓢，再在自己的项目里创建自己需要的模板文件（要懂一点ejs）。   </li>
+</ul>
+<p>都ok后，<code>papery build .</code> 下就可以看到结果了。   </p>
+<p><code>友情链接</code>就简单多了，<code>Papery</code>原本就提供基本的扩展，在<code>ext.yml</code>下添加友情链接的数据，在模板里填上自己的代码就可以了。</p>
+<p>有关<code>Papery</code>的就差不多了，好像也讲了些这之外的，不管了。 下一篇准备讲解我的博客另外的一些扩展，基本上都是锦上添花的功能。</p>
 
-      <!-- 多说评论框 -->
+        </article>
 
-      <div class="ds-thread" data-thread-key="cij16r47h0009p85lg2u6vxbc" data-title="我的博客的搭建教程[2]-Papery" data-url="http://www.linwu.name/post/course-static-blog-2.html"></div>
-
+        <!-- 多说评论框 -->
+        
+        <div class="ds-thread" data-thread-key="cij1hibqg0009a65lz6um8xg7" data-title="我的博客的搭建教程[2]-Papery" data-url="http://www.linwu.name/post/course-static-blog-2.html"></div>
+        
 
     </div>
     <!--<div class="article-side">
@@ -120,83 +104,84 @@
         </div>
 
     </div>-->
-  </section>
+</section>
 
-  <div class="m-article-paging">
-
+<div class="m-article-paging">
+    
     <a class="prev-article" href="/post/course-static-blog-3.html" title="上一篇：我的博客的搭建教程[3]-扩展">上一篇</a>
-
-
+    
+    
     <a class="next-article" href="/post/course-static-blog-1.html" title="下一篇：我的博客的搭建教程[1]-准备篇">下一篇</a>
+    
+</div>
 
-  </div>
-
-  <script type="text/javascript">
+<script type="text/javascript">
     //seajs.use(["jquery", "qrcode", "prettify"], function ($, qrcode) {
-    seajs.use(["highlight", "jquery"], function(hljs) {
-      $(function() {
-        // 代码高亮
-        /*$('pre').each(function (i, block) {
-            hljs.highlightBlock(block);
-        });*/
-        //prettyPrint();
-      });
+    seajs.use(["highlight", "jquery"], function (hljs) {
+        $(function () {
+            // 代码高亮
+            /*$('pre').each(function (i, block) {
+                hljs.highlightBlock(block);
+            });*/
+            //prettyPrint();
+        });
     });
 
     // 多说
-    var duoshuoQuery = {
-      short_name: "linwu"
-    };
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';
-      ds.async = true;
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+    var duoshuoQuery = {short_name: "linwu"};
+    (function () {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';
+        ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
-  </script>
+</script>
 
-  <div class="m-gotop" id="j_gotop" title="回到顶部">回到顶部</div>
 
-  <footer class="area-page-footer">
+<div class="m-gotop" id="j_gotop" title="回到顶部">回到顶部</div>
+
+<footer class="area-page-footer">
     <div class="friend-links">友情链接 :
-
-      <a href="http://gao7.com/" target="_blank">搞趣网</a>
-
-      <a href="http://willerce.com/" target="_blank">willerce</a>
-
-      <a href="http://www.zhoujier.com/" target="_blank">积耳大神</a>
-
-      <a href="https://huangzhenda.github.io/" target="_blank">阿达</a>
-
-      <a href="http://linjunfeng.com/" target="_blank">Junfo</a>
-
+        
+        <a href="http://gao7.com/" target="_blank">搞趣网</a>
+        
+        <a href="http://willerce.com/" target="_blank">willerce</a>
+        
+        <a href="http://www.zhoujier.com/" target="_blank">积耳大神</a>
+        
+        <a href="https://huangzhenda.github.io/" target="_blank">阿达</a>
+        
+        <a href="http://linjunfeng.com/" target="_blank">Junfo</a>
+        
     </div>
     <div class="footer-info">
-      &copy; 2016 linwu &emsp;&emsp; Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        &copy; 2016 linwu &emsp;&emsp;
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
-  </footer>
+</footer>
 
-  <script type="text/javascript">
-    seajs.use(["common", "jquery"], function(common) {
-      $(function() {
-        common.init_page_nav();
-        common.init_gotop();
-      });
+<script type="text/javascript">
+    seajs.use(["common", "jquery"], function (common) {
+        $(function () {
+            common.init_page_nav();
+            common.init_gotop();
+        });
     });
 
     // 百度统计
     var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?1989ec4c01507dc2525b30aca7d56f8e";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?1989ec4c01507dc2525b30aca7d56f8e";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
     })();
-  </script>
-  <script>
-  </script>
-</body>
+</script>
+<script>
+</script>
 
+</body>
 </html>
