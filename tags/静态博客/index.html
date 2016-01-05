@@ -358,7 +358,7 @@ date: 2015-4-2
 
         <dd><span>03-03</span><a href="/post/query-plugin-develop.html">jQuery插件开发</a></dd>
         <!--<dd>2015-03-03</dd>
-            <dd>Tue Jan 05 2016 14:24:17 GMT+0800</dd>
+            <dd>Tue Jan 05 2016 14:40:19 GMT+0800</dd>
             <dd>post</dd>
             <dd></dd>
             <dd>_posts/分享/jQuery插件开发.md</dd>
@@ -395,14 +395,6 @@ date: 2015-3-3
 
 ## 插件的第一形态
 面对这种情况，通常我们会通过定义`function`的方式来实现。
-{% codeblock lang:javascript xx %}
-function pluginName($selector){
-    $.each($selector, function () {
-        $(this).css(&quot;background-color&quot;, &quot;#ccc&quot;);
-        // to do something...
-    });
-}
-{% endcodeblock %}
 ```js
 function pluginName($selector){
     $.each($selector, function () {

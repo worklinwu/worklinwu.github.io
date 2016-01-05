@@ -97,38 +97,39 @@
 
       <!-- 多说评论框 -->
 
-      <div class="ds-thread" data-thread-key="cij0z54mb000e4p5lj6bmwoii" data-title="我的博客的搭建教程[1]-准备篇" data-url="http://www.linwu.name/post/course-static-blog-1.html"></div>
+      <div class="ds-thread" data-thread-key="cij11lo8s000e9l5lr5n251z9" data-title="我的博客的搭建教程[1]-准备篇" data-url="http://www.linwu.name/post/course-static-blog-1.html"></div>
 
 
     </div>
-    <div class="article-side">
-      <div class="ui-box-side m-side-article-list">
-        <div class="box-header">
-          <h3>其他文章</h3>
+    <!--<div class="article-side">
+        <div class="ui-box-side m-side-article-list">
+            <div class="box-header">
+                <h3>其他文章</h3>
+            </div>
+            <ul class="js-random-post">
+                < %
+                var _posts = _.shuffle(site.posts.data)
+                var length = _posts.length > 5 ? 5 : _posts.length;
+                for(var i = 0; i < length; i++){
+                    if (_posts[i].path == page.path) {
+                        length++;
+                        continue;
+                    } % >
+                <li><a href="/< %= _posts[i].path % >">< %= _posts[i].title % ></a></li>
+                < % } % >
+            </ul>
         </div>
-        <ul>
 
-          <li><a href="/post/testHelloWorld.html">Hello World</a></li>
-
-          <li><a href="/post/course-static-blog-4.html">我的博客的搭建教程[4]-补充</a></li>
-
-          <li><a href="/post/course-static-blog-3.html">我的博客的搭建教程[3]-扩展</a></li>
-
-          <li><a href="/post/course-static-blog-2.html">我的博客的搭建教程[2]-Papery</a></li>
-
-        </ul>
-      </div>
-
-      <div class="ui-box-side m-side-article-list">
-        <div class="box-header">
-          <h3>热评文章</h3>
+        <div class="ui-box-side m-side-article-list">
+            <div class="box-header">
+                <h3>热评文章</h3>
+            </div>
+            <ul>
+                <div class="ds-top-threads" data-range="monthly" data-num-items="5"></div>
+            </ul>
         </div>
-        <ul>
-          <div class="ds-top-threads" data-range="monthly" data-num-items="5"></div>
-        </ul>
-      </div>
 
-    </div>
+    </div>-->
   </section>
 
   <div class="m-article-paging">
