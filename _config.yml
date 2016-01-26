@@ -1,0 +1,112 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: 拳头巴掌的博客
+subtitle: 做最好的自己
+description:
+author: linwu
+language:
+timezone: Asia/Shanghai
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: http://www.linwu.name
+root: /
+permalink: post/:english_title.html
+permalink_defaults:
+
+# Directory
+source_dir: source
+public_dir: build
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+archive_generator:
+  per_page: 9
+  yearly: false
+  monthly: false
+  daily: false
+
+# Writing
+new_post_name: :title.md # File name of new postss
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link: true # Open external links in new tab
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: false
+  auto_detect: false
+  tab_replace:
+marked:
+  gfm: true
+  pedantic: false
+  sanitize: false
+  tables: true
+  breaks: false
+  smartLists: true
+  smartypants: true
+
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 999
+pagination_dir: page
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+#theme: landscape
+theme: lwBlog
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  message:
+  repo:
+    github: https://github.com/worklinwu/worklinwu.github.io.git,master
+
+uglify:
+  mangle: true
+  output:
+  compress:
+  exclude:
+    - \*.min.js
+
+#clean_css:
+#  exclude:
+#    - \*.min.css
+
+friendlink:
+  - label: 搞趣网
+    url: http://gao7.com/
+  - label: willerce
+    url: http://willerce.com/
+  - label: 积耳大神
+    url: http://www.zhoujier.com/
+  - label: 阿达
+    url: https://huangzhenda.github.io/
+  - label: Junfo
+    url: http://linjunfeng.com/

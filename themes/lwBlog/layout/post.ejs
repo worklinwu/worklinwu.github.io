@@ -1,0 +1,55 @@
+<section class="area-article-details clearfix">
+    <div class="article-content">
+        <div class="article-title"><%= page.title %></div>
+        <div class="article-meta"><span>作者：<%= page.author %></span> ∷ <span>时间：<%= date(page.date, "YYYY-MM-DD") %></span></div>
+        <article class="blog-article" id="j_article_markdown">
+            <%- page.content %>
+        </article>
+
+        <!-- 多说评论框 -->
+        <% if (page.comments){ %>
+        <div class="ds-thread" data-thread-key="<%= page._id %>" data-title="<%= page.title %>" data-url="<%= page.permalink %>"></div>
+        <% } %>
+
+    </div>
+    <!--<div class="article-side">
+        <div class="ui-box-side m-side-article-list">
+            <div class="box-header">
+                <h3>其他文章</h3>
+            </div>
+            <ul class="js-random-post">
+                < %
+                var _posts = _.shuffle(site.posts.data)
+                var length = _posts.length > 5 ? 5 : _posts.length;
+                for(var i = 0; i < length; i++){
+                    if (_posts[i].path == page.path) {
+                        length++;
+                        continue;
+                    } % >
+                <li><a href="/< %= _posts[i].path % >">< %= _posts[i].title % ></a></li>
+                < % } % >
+            </ul>
+        </div>
+
+        <div class="ui-box-side m-side-article-list">
+            <div class="box-header">
+                <h3>热评文章</h3>
+            </div>
+            <ul>
+                <div class="ds-top-threads" data-range="monthly" data-num-items="5"></div>
+            </ul>
+        </div>
+
+    </div>-->
+</section>
+
+<div class="m-article-paging">
+    <% if(page.prev){ %>
+    <a class="prev-article" href="/<%= page.prev.path %>" title="上一篇：<%= page.prev.title %>">上一篇</a>
+    <% } %>
+    <% if(page.next){ %>
+    <a class="next-article" href="/<%= page.next.path %>" title="下一篇：<%= page.next.title %>">下一篇</a>
+    <% } %>
+</div>
+
+<%- partial('_partial/footer-post', null, {cache: !config.relative_link}) %>

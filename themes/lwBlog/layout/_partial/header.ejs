@@ -1,0 +1,21 @@
+<header class="area-page-header">
+    <div class="inner">
+        <h1 class="logo"><a href="<%- url_for() %>" title="回首页">拳头巴掌</a></h1>
+
+        <div class="m-page-nav" id="j_page_nav">
+            <a class="page-nav-btn"></a>
+            <ul>
+                <% for(var i = 0; i < theme.menu.length; i++){ %>
+                <li><a href="<%= theme.menu[i].href %>" target="<%= theme.menu[i].target %>"><%- theme.menu[i].label %></a></li>
+                <% } %>
+            </ul>
+            <div class="nav-label"></div>
+        </div>
+        <div class="m-search">
+            <form method="get" id="j_search" action="<%- url_for() %>" class="control-group">
+                <input type="text" name="search" class="search-input"/>
+                <button type="submit" class="submit-btn">搜索</button>
+            </form>
+        </div>
+    </div>
+</header>

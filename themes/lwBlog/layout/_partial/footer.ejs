@@ -1,0 +1,33 @@
+<div class="m-gotop" id="j_gotop" title="回到顶部">回到顶部</div>
+
+<footer class="area-page-footer">
+    <div class="friend-links">友情链接 :
+        <% config.friendlink.forEach(function (fl) { %>
+        <a href="<%= fl.url %>" target="_blank"><%= fl.label %></a>
+        <% }); %>
+    </div>
+    <div class="footer-info">
+        &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %> &emsp;&emsp;
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+</footer>
+
+<script type="text/javascript">
+    seajs.use(["common", "jquery"], function (common) {
+        $(function () {
+            common.init_page_nav();
+            common.init_gotop();
+        });
+    });
+
+    // 百度统计
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?1989ec4c01507dc2525b30aca7d56f8e";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<script>
+</script>

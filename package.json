@@ -1,0 +1,20 @@
+{
+  "name": "hexo-site",
+  "version": "0.0.0",
+  "private": true,
+  "hexo": {
+    "version": "3.1.1"
+  },
+  "dependencies": {
+    "hexo": "^3.1.1",
+    "hexo-admin": "^1.1.1",
+    "hexo-deployer-git": "0.0.4",
+    "hexo-fs": "^0.1.5",
+    "hexo-generator-index": "^0.2.0",
+    "hexo-renderer-ejs": "^0.1.0",
+    "hexo-renderer-marked": "^0.2.8",
+    "hexo-server": "^0.1.2",
+    "moment": "^2.11.0",
+    "underscore": "^1.8.3"
+  }
+}

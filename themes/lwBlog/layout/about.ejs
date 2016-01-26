@@ -1,0 +1,24 @@
+<section class="area-body">
+    <div class="m-about-me">
+        <div class="avatar">
+            <img src="/assets/images/face.png" alt=""/>
+        </div>
+        <div class="console">
+            <textarea id="j_console" readonly="readonly"></textarea>
+        </div>
+
+    </div>
+</section>
+
+<script type="text/javascript">
+    seajs.use(["assets/lib/typetype/jquery.typetype.js", "jquery"], function (typetype) {
+        $('#j_console')
+                .typetype('/*************** \n', {t: 20})
+                .typetype(' author : 拳头巴掌 \n', {t: 20})
+                .typetype(' job : I am a Front End Engineer! \n', {t: 20})
+                .typetype(' work : I am work in Onlyou. \n', {t: 20})
+                .typetype(' blog create : 2014-12-30 \n', {t: 20})
+                .typetype(' contact me : 330151350@qq.com \n', {t: 20})
+                .typetype(' ***************/ \n', {t: 20});
+    });
+</script>

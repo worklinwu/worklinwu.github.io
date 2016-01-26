@@ -1,0 +1,30 @@
+<section class="area-body">
+    <div class="m-archive">
+        <div class="title">文章归档</div>
+        <%
+        var result = {};
+        var _year;
+
+        site.posts.forEach(function (art) {
+            art.date = date(art.date, 'YYYY-MM-DD')
+            _year = art.date.substr(0, art.date.indexOf('-'));
+            if (!result[_year]) {
+                result[_year] = [];
+            }
+            result[_year].push(art);
+        });
+        %>
+
+        <%
+        for(var year in result){
+        result[year] = result[year].reverse();
+        %>
+        <dl>
+            <dt><%= year %></dt>
+            <% result[year].forEach(function (article) {%>
+            <dd><span><%= article.date.substr(article.date.indexOf('-') + 1) %></span><a href="/<%= article.path %>"><%= article.title %></a></dd>
+            <% }); %>
+        </dl>
+        <% } %>
+    </div>
+</section>
