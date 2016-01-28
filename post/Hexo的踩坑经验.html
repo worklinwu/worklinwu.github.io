@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1,maximum-scale=1, user-scalable=no"/>
+    <meta name="renderer" content="webkit">
+    <title>
+        
+        Hexo的踩坑经验 |
+        
+        拳头巴掌的博客
+    </title>
+    
+    <link rel="alternate" href="/atom.xml" title="拳头巴掌的博客" type="application/atom+xml">
+    
+    <link rel="icon" type="image/png" href="/assets/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="/assets/i/app-icon72x72@2x.png">
+    <link rel="stylesheet" href="/assets/style/blog.css"/>
+    <link rel="stylesheet" href="/assets/lib/prettify/prettify-night.css"/>
+
+    <script src="/assets/lib/seajs/3.0.0/sea.js"></script>
+    <script src="/assets/script/seajs.config.js"></script>
+</head>
+<body>
+<header class="area-page-header">
+    <div class="inner">
+        <h1 class="logo"><a href="/" title="回首页">拳头巴掌</a></h1>
+
+        <div class="m-page-nav" id="j_page_nav">
+            <a class="page-nav-btn"></a>
+            <ul>
+                
+                <li><a href="/about.html" target="_self">关于我</a></li>
+                
+                <li><a href="/archives.html" target="_self">文章归档</a></li>
+                
+                <li><a href="https://github.com/worklinwu" target="_blank">github</a></li>
+                
+                <li><a href="http://www.linwu.name/HtmlConvertToCss" target="_self"><strong>HtmlConvertToCss</strong></a></li>
+                
+            </ul>
+            <div class="nav-label"></div>
+        </div>
+        <div class="m-search">
+            <form method="get" id="j_search" action="/" class="control-group">
+                <input type="text" name="search" class="search-input"/>
+                <button type="submit" class="submit-btn">搜索</button>
+            </form>
+        </div>
+    </div>
+</header>
+
+<section class="area-article-details clearfix">
+    <div class="article-content">
+        <div class="article-title">Hexo的踩坑经验</div>
+        <div class="article-meta"><span>作者：拳头巴掌</span> ∷ <span>时间：2016-01-28</span></div>
+        <article class="blog-article" id="j_article_markdown">
+            <p>(最近有点小忙，折腾一个 web 端的 IM 程序，晚上回家就没有想写文章的动力了。)   </p>
+<p><a href="http://hexo.io/" target="_blank" rel="external">Hexo</a> 很了不起，很喜欢用它来写博客的感觉。   </p>
+<p>之前刚接触静态博客的时候，很懵懂，当时看到 papery 这个框架，感觉不错，就开始试着搭建自己的博客。papery 所有的功能对于我目前的需求够用了，但是随着时间的发展，文章会变多，发现这样管理起来好不方便。后来研究了下它的源码，发现不难，私下也自己做了几个 demo 版本，想着实现一个自己喜欢的版本，但是太忙太忙太懒了。直到有一天我再次翻开 Hexo 的主页，发现已经出3.0版本了，更新了很多东西，关键是有中文文档，之前没有发现，这对于英文不好的我来说就是福音啊。</p>
+<p>于是用了几天时间把之前博客移植过来，当然遇到了不少问题，下面例举几个：   </p>
+<ul>
+<li>怎么自定义 url 名称规则？</li>
+<li>怎么设置列表的缩略图？</li>
+<li>我的博客有特殊页面，要怎么渲染？</li>
+<li>我的站点有使用一个数据文件，要怎么生成？</li>
+</ul>
+<h2 id="u7B2C_u4E00_u4E2A_u95EE_u9898_uFF1A_u600E_u4E48_u81EA_u5B9A_u4E49_url__u540D_u79F0_u89C4_u5219_uFF1F"><a href="#u7B2C_u4E00_u4E2A_u95EE_u9898_uFF1A_u600E_u4E48_u81EA_u5B9A_u4E49_url__u540D_u79F0_u89C4_u5219_uFF1F" class="headerlink" title="第一个问题：怎么自定义 url 名称规则？"></a>第一个问题：怎么自定义 url 名称规则？</h2><p>研究 Hexo 的文档后发现，在 <a href="https://hexo.io/zh-cn/docs/permalinks.html" target="_blank" rel="external">永久链接</a>  这一节有说到，可以通过<code>permalink</code>来配置永久链接（配置的时候要注意，这会改变目录结构），我想配个英文描述的链接，因为之前博客是这样的，但是文档上举得例子都是已有的属性，其中<code>title</code>属性又是用来描述文章标题的，我就想是不是可以自定义一个字段呢。果然，我在文章配置里面添加一个<code>english_title</code>的字段，yml 文件配置改为<code>permalink: post/:english_title.html</code>，这就搞定啦。   </p>
+<h2 id="u7B2C_u4E8C_u4E2A_u95EE_u9898_uFF1A_u600E_u4E48_u8BBE_u7F6E_u5217_u8868_u7684_u7F29_u7565_u56FE_uFF1F"><a href="#u7B2C_u4E8C_u4E2A_u95EE_u9898_uFF1A_u600E_u4E48_u8BBE_u7F6E_u5217_u8868_u7684_u7F29_u7565_u56FE_uFF1F" class="headerlink" title="第二个问题：怎么设置列表的缩略图？"></a>第二个问题：怎么设置列表的缩略图？</h2><p>我的首页列表是一个图文图列表，虽然目前大多是用自动生成的猫咪图，但我需要能够这就配置的。这个问题和上个问题一样，通过配置 yml 文件就可以解决了。在文件编译的过程中，会把文章头部的配置信息拿出来写入到内存中，那我只要添加一个<code>thumbnail</code>的配置信息，在编列数据的时候判断下就可以了。</p>
+<h2 id="u7B2C_u4E09_u4E2A_u95EE_u9898_uFF1A_u6211_u7684_u535A_u5BA2_u6709_u7279_u6B8A_u9875_u9762_uFF0C_u8981_u600E_u4E48_u6E32_u67D3_uFF1F"><a href="#u7B2C_u4E09_u4E2A_u95EE_u9898_uFF1A_u6211_u7684_u535A_u5BA2_u6709_u7279_u6B8A_u9875_u9762_uFF0C_u8981_u600E_u4E48_u6E32_u67D3_uFF1F" class="headerlink" title="第三个问题：我的博客有特殊页面，要怎么渲染？"></a>第三个问题：我的博客有特殊页面，要怎么渲染？</h2><p>我的博客比较简单，没有复杂的需求，但是有几个特别的页面（简单的归档文件，个人介绍页面，README.md，CNAME，其他以后可能会加）。那么我要怎么做呢？这个问题折腾了好久。还好 Hexo 足够强大，看了 API 文档后，发现了[生成器]（<a href="https://hexo.io/zh-cn/api/generator.html）。我们的主题目录下有个`scripts`目录，这个目录在编译的时候都会执行，里面放的是" target="_blank" rel="external">https://hexo.io/zh-cn/api/generator.html）。我们的主题目录下有个`scripts`目录，这个目录在编译的时候都会执行，里面放的是</a> nodejs 的文件。我这样做：   </p>
+<p>在<code>scripts</code>目录下新建<code>generator.js</code>文件，写下
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">"hexo-fs"</span>); <span class="comment">// 因为会涉及到文件操作</span></span><br><span class="line"><span class="comment">// 生成 README</span></span><br><span class="line">hexo.extend.generator.register(<span class="string">'readme'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">locals</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">debugger</span>;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        path: <span class="string">"README.md"</span>,</span><br><span class="line">        data: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="comment">// Hexo会 data 返回的数据写入到 path 指定的文件里</span></span><br><span class="line">            <span class="keyword">return</span> fs.createReadStream(<span class="string">'themes/'</span> + hexo.config.theme + <span class="string">'/README.md'</span>); <span class="comment">// 拿模板目录下的 README 文件</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 生成 archive 页</span></span><br><span class="line">hexo.extend.generator.register(<span class="string">'archives'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">locals</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">debugger</span>;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        path: <span class="string">"archives.html"</span>, <span class="comment">// 输出的文件名</span></span><br><span class="line">        data: &#123;&#125;,</span><br><span class="line">        layout: [<span class="string">"archives"</span>] <span class="comment">// 模板，指向的是我目录下的 archives.ejs 文件</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>然后愉快的执行 <code>$ hexo generate</code>，到你的目标目录下查看，有你的文件了。</p>
+<h2 id="u7B2C_u56DB_u4E2A_u95EE_u9898_uFF1A_u6211_u7684_u7AD9_u70B9_u6709_u4F7F_u7528_u4E00_u4E2A_u6570_u636E_u6587_u4EF6_uFF0C_u8981_u600E_u4E48_u751F_u6210_uFF1F"><a href="#u7B2C_u56DB_u4E2A_u95EE_u9898_uFF1A_u6211_u7684_u7AD9_u70B9_u6709_u4F7F_u7528_u4E00_u4E2A_u6570_u636E_u6587_u4EF6_uFF0C_u8981_u600E_u4E48_u751F_u6210_uFF1F" class="headerlink" title="第四个问题：我的站点有使用一个数据文件，要怎么生成？"></a>第四个问题：我的站点有使用一个数据文件，要怎么生成？</h2><p><code>数据文件</code>我给它命名成<code>db.json</code>，在我源码里可以找到它。它是我上个博客项目的遗产，存储着网站的文章索引，用于实现网站的站内搜索，随机文章等功能。尽管说 Hexo 已经有自己的分页功能了，搜索可以用第三方的，但是我还是保留了下来，改进这个更灵活。生成数据文件和生成页面略有不同，后者需要数据和时间点。翻看 API，Hexo 有个 <a href="https://hexo.io/zh-cn/api/events.html" target="_blank" rel="external">事件</a> 的好东西，可以在项目编译的各个时间点做自己想做的事。具体有哪些事件文档里有，但是没有具体的参数说明，为了知道每个事件有哪些参数，参数又提供哪些值，费了我好多时间。<br>最后选在<code>exit</code>的时候添加我的数据文件解析。解析的原理就是在编译的时候，把内存里的文章相关的信息取出来，删除不要的属性转成 json 写入到文件里，页面上可以用 ajax 加载。具体的可以看源码，在<code>scripts/generatePostDataJson.js</code>文件里。   </p>
+<p>写完博客后，自己就在想，有那么强大的功能，那不是可以把页面“mvc”化，只要有一个入口文件，其他的全部生成数据文件。至于 seo 什么的生成个文件给浏览器抓取就好。</p>
+
+        </article>
+
+        <!-- 多说评论框 -->
+        
+        <div class="ds-thread" data-thread-key="cijy1a1v30011xd5l11blf0qi" data-title="Hexo的踩坑经验" data-url="http://www.linwu.name/post/Hexo的踩坑经验.html"></div>
+        
+
+    </div>
+    <!--<div class="article-side">
+        <div class="ui-box-side m-side-article-list">
+            <div class="box-header">
+                <h3>其他文章</h3>
+            </div>
+            <ul class="js-random-post">
+                < %
+                var _posts = _.shuffle(site.posts.data)
+                var length = _posts.length > 5 ? 5 : _posts.length;
+                for(var i = 0; i < length; i++){
+                    if (_posts[i].path == page.path) {
+                        length++;
+                        continue;
+                    } % >
+                <li><a href="/< %= _posts[i].path % >">< %= _posts[i].title % ></a></li>
+                < % } % >
+            </ul>
+        </div>
+
+        <div class="ui-box-side m-side-article-list">
+            <div class="box-header">
+                <h3>热评文章</h3>
+            </div>
+            <ul>
+                <div class="ds-top-threads" data-range="monthly" data-num-items="5"></div>
+            </ul>
+        </div>
+
+    </div>-->
+</section>
+
+<div class="m-article-paging">
+    
+    
+    <a class="next-article" href="/post/博客复活.html" title="下一篇：博客复活">下一篇</a>
+    
+</div>
+
+<script type="text/javascript">
+    // 多说
+    var duoshuoQuery = {short_name: "linwu"};
+    (function () {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';
+        ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+
+
+<div class="m-gotop" id="j_gotop" title="回到顶部">回到顶部</div>
+
+<footer class="area-page-footer">
+    <div class="friend-links">友情链接 :
+        
+        <a href="http://willerce.com/" target="_blank">willerce</a>
+        
+        <a href="http://linjunfeng.com/" target="_blank">Junfo</a>
+        
+    </div>
+    <div class="footer-info">
+        &copy; 2016 linwu &emsp;&emsp;
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+</footer>
+
+<script type="text/javascript">
+    seajs.use(["common", "jquery"], function (common) {
+        $(function () {
+            common.init_page_nav();
+            common.init_gotop();
+        });
+    });
+
+    // 百度统计
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?1989ec4c01507dc2525b30aca7d56f8e";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<script>
+</script>
+
+</body>
+</html>
